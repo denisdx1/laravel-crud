@@ -2,7 +2,7 @@
 
 Este es un simple CRUD creado con Laravel para gestionar pacientes (o cualquier entidad).
 
-## Captura de pantalla
+## Captura de pantallas
 
 ![VISTA DE LA TABLA](images/image.png)
 ![VISTA DE AGREGAR DATOS](images/agregar.png)
