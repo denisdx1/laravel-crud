@@ -28,7 +28,9 @@ class PacienteController extends Controller
         // Quedarán todos los pacientes.
     
         // Ejecutamos la consulta
-        $pacientes = $query->orderBy('dni', 'asc')->paginate(5);
+        $pacientes = $query->orderBy('dni', 'asc')
+                       ->paginate(5)
+                       ->withQueryString();
     
         // Retornamos la vista con la lista de pacientes
         // y le pasamos la variable $estado para destacar la opción elegida

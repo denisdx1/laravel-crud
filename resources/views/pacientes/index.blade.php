@@ -16,24 +16,17 @@
             Agregar Paciente
         </a>
 
-        <!-- Formulario de filtro -->
-        <form action="{{ route('pacientes.index') }}" method="GET">
-            <div class="input-group">
-                <label class="input-group-text" for="estadoSelect">Filtrar por estado:</label>
-                <select name="estado" id="estadoSelect" class="form-select" onchange="this.form.submit()">
-                    <!-- Opción 'todos' (vacío) -->
-                    <option value="" {{ (isset($estado) && $estado === '') ? 'selected' : '' }}>
-                        Todos
-                    </option>
-                    <option value="1" {{ (isset($estado) && $estado === '1') ? 'selected' : '' }}>
-                        Activo
-                    </option>
-                    <option value="0" {{ (isset($estado) && $estado === '0') ? 'selected' : '' }}>
-                        Inactivo
-                    </option>
-                </select>
-            </div>
-        </form>
+        <!-- Filtro de estado -->
+<form action="{{ route('pacientes.index') }}" method="GET">
+    <div class="input-group">
+        <label class="input-group-text" for="estadoSelect">Filtrar por estado:</label>
+        <select name="estado" id="estadoSelect" class="form-select" onchange="this.form.submit()">
+            <option value=""  {{ ($estado === '')  ? 'selected' : '' }}>Todos</option>
+            <option value="1" {{ ($estado === '1') ? 'selected' : '' }}>Activo</option>
+            <option value="0" {{ ($estado === '0') ? 'selected' : '' }}>Inactivo</option>
+        </select>
+    </div>
+</form>
     </div>
 
     @if (session('success'))
